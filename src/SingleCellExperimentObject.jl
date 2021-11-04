@@ -64,7 +64,7 @@ function SingleCellExp(counts, colData;
     metadata = Dict()
     assays = Dict()
     
-    rowData = DataFrame()
+    rowData = DataFrames.DataFrame()
     rowData[!,:GeneID] = rownames
     
 
@@ -119,7 +119,7 @@ function show_gene_data(sceexp::SingleCellExp, gene)
     usamples = unique(samples)
     umeasures = [Symbol(i) for i in unique(measures)]
     
-    df = DataFrame()
+    df = DataFrames.DataFrame()
     df[!,:Sample] = usamples
     
     for umeasure in umeasures
@@ -548,7 +548,7 @@ function number_cells_per_sample(df::DataFrames.DataFrame; sergitimepointsample 
     # This version of the code works with just a colData provided, o need for a SCE object
     coldata = df
     # Calulate the number of cells per sample
-    df_summary = DataFrame()
+    df_summary = DataFrames.DataFrame()
     df_summary[!,:Sample] = unique(coldata[!,:Sample])
     
     if sergitimepointsample == true
