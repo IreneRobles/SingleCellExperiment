@@ -443,7 +443,7 @@ end
 
 function select_expressed_genes(sceexp; min_cells_expressing_gene = 114)
     
-    sceexp = SingleCellExpJulia.total_cells_per_gene(sceexp)
+    sceexp = total_cells_per_gene(sceexp)
     f(x) = x > min_cells_expressing_gene
     bool  = [f(i) for i in sceexp.rowData[!,:TotalCells]] 
     new_sce = SingleCellExpJulia.filter_genes(bool, sceexp)
