@@ -310,8 +310,8 @@ version = "0.5.0"
 uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 
 [[NoLongerProblems]]
-deps = ["DataFrames", "Distributions", "LightGraphs", "Statistics"]
-git-tree-sha1 = "def2a90a967eae140ec0d5eea2e3c6fd24084d05"
+deps = ["DataFrames", "Distributions", "LightGraphs", "Statistics", "StatsFuns"]
+git-tree-sha1 = "cff1dd07ac4f881d4cab93a6b90418445718ccfc"
 repo-rev = "main"
 repo-url = "../NoLongerProblems"
 uuid = "82dfab41-d1ab-4f21-ac61-499025515bd6"
@@ -319,7 +319,7 @@ version = "0.1.0"
 
 [[NoLongerProblems_Pandas]]
 deps = ["CSV", "DataFrames", "Pandas"]
-git-tree-sha1 = "1c92c181c07c3e11f70631f0e1b7b109618a6c97"
+git-tree-sha1 = "67a3c5bfe08d5d8b059773d1dcc566efcd2e0feb"
 repo-rev = "main"
 repo-url = "../NoLongerProblems_Pandas"
 uuid = "5d29c26c-ce79-4baf-a522-6e725d77eda7"
