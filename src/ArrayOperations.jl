@@ -115,6 +115,15 @@ function get_max_and_min_value_per_gene(singlecellexperiment;
     
 end  
 
+function percent_mt(sceexp; pat = "mt")
+    boolmt = startswith.(sceexp.rownames, pat) 
+    mtcounts = sceexp.counts[boolmt, :]
+    counts = [sum(sceexp.counts[:,ii]) for ii in 1:size(sceexp.counts)[2]]
+    mtcounts = [sum(mtcounts[:,ii]) for ii in 1:size(mtcounts)[2]]
+    sceexp.colData[!,"percent.mt"] = mtcounts./counts.*100
+    return sceexp
+end
+
 
 ###################################
 ## FUNCTIONS TO TRANSFORM COUNTS ## 
