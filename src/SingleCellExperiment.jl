@@ -4,7 +4,7 @@ using CSV
 using PyCall, DataFrames
 using NoLongerProblems, NoLongerProblems_Pandas, ScikitLearn
 import Pandas
-using Seaborn, PrettyPlotting
+using Seaborn, PrettyPlotting, Tables
 using Statistics, MultipleTesting, HypothesisTests,ProgressMeter
 
 @sk_import linear_model: LogisticRegression
