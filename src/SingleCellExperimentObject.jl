@@ -326,7 +326,7 @@ end
     
 function drop_non_unique_geneid(singlecellexperiment)
     isnotduplicate = .!nonunique(singlecellexperiment.rowData, :GeneID)
-    new_sce = filter_genes(isnotduplicate, sce)
+    new_sce = filter_genes(isnotduplicate, singlecellexperiment)
 end
 
 
