@@ -330,13 +330,13 @@ function drop_non_unique_geneid(singlecellexperiment)
 end
 
 
-function SingleCellExperiment.save_sce_for_R(singlecellexperiment; dir = pwd())
+function save_sce_for_R(singlecellexperiment; dir = pwd())
     mkpath(dir)
     singlecellexperiment = SingleCellExperiment.drop_non_unique_geneid(singlecellexperiment)
     CSV.write(normpath(dir, "rowData.csv"), singlecellexperiment.rowData)
     CSV.write(normpath(dir, "colData.csv"), singlecellexperiment.colData)
     CSV.write(normpath(dir, "counts.csv"), Tables.table(singlecellexperiment.counts), writeheader=false)
-    CSV.write(normpath(dir, "geneid.csv"), Tables.table(singlecellexperiment.rownames), writeheader=false)
+    CSV.write(normpath(dir, "geneid.csv"), Tables.table(singlecellexperiment.rowData[!,:GeneID]), writeheader=false)
 end
 
 
